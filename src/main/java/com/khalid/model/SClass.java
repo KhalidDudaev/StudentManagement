@@ -1,14 +1,18 @@
 package com.khalid.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.khalid.lib.ItemList;
 
 public class SClass {
     
     private final String name;
-    private List<GradeLevel> grades = new ArrayList<>();
+    private ItemList<GradeLevel> levels = new ItemList<>();
 
-    public SClass(String name) {
+    public SClass(String name, ItemList<GradeLevel> levels) {
+        this.levels.addAll(levels);
         this.name = name;
     }
 
@@ -17,15 +21,15 @@ public class SClass {
     }
 
     public List<GradeLevel> getGrades() {
-        return this.grades;
+        return this.levels;
     }
 
     public void addGrade(GradeLevel grade) {
-        this.grades.add(grade);
+        this.levels.add(grade);
     }
 
     public void removeGrade(GradeLevel grade) {
-        this.grades.remove(grade);
+        this.levels.remove(grade);
     }
 
     public boolean isName(String name){
@@ -33,7 +37,7 @@ public class SClass {
     }
 
     public boolean isGrade(GradeLevel grade){
-        return this.grades.contains(grade);
+        return this.levels.contains(grade);
     }
 
     @Override

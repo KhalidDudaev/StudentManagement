@@ -3,24 +3,18 @@ package com.khalid.model;
 public class Subject {
     
     private final String name;
-    private final int level;
-    private final String 
+    private final GradeLevel level;
+    private final SubjectType type;
     
     /** 
      * @param name
      * @param level
+     * @param type
      */
-    public Subject(String name, int level) {
+    public Subject(String name, GradeLevel level, SubjectType type) {
         this.name = name;
         this.level = level;
-    }
-
-    
-    /** 
-     * @return int
-     */
-    public int getLevel() {
-        return this.level;
+        this.type = type;
     }
 
     /** 
@@ -28,6 +22,20 @@ public class Subject {
      */
     public String getName() {
         return this.name;
+    }
+    
+    /** 
+     * @return GradeLevel
+     */
+    public GradeLevel getLevel() {
+        return this.level;
+    }
+    
+    /** 
+     * @return SubjectType
+     */
+    public SubjectType getType() {
+        return this.type;
     }
 
     /** 
@@ -42,8 +50,16 @@ public class Subject {
      * @param level
      * @return boolean
      */
-    public boolean isLevel(int level){
+    public boolean isLevel(GradeLevel level){
         return this.level == level;
+    }
+
+    /** 
+     * @param type
+     * @return boolean
+     */
+    public boolean isType(SubjectType type){
+        return this.type == type;
     }
 
     /** 

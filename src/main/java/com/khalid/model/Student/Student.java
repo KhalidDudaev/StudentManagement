@@ -3,6 +3,7 @@ package com.khalid.model.Student;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Student {
 
@@ -63,6 +64,17 @@ public class Student {
 
     public long getBirthDay() {
         return birthDay;
+    }
+
+    public long getBirthDateYear() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(birthDay);
+        return calendar.get(Calendar.YEAR);
+    }
+
+    @Override
+    public boolean equals(Object student) {
+        return this.equals(student);
     }
 
     /** 

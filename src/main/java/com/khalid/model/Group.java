@@ -7,18 +7,16 @@ public class Group {
     private final String name;
     private final int min;
     private final int max;
-    private final int level;
+    private final GradeLevel level;
 
     private List<Subject> subjects;
 
-
-    public Group(String name, int min, int max, int level) {
+    public Group(String name, int min, int max, GradeLevel level) {
         this.name = name;
         this.min = min;
         this.max = max;
         this.level = level;
     }
-
 
     public String getName() {
         return this.name;
@@ -36,9 +34,12 @@ public class Group {
         return this.subjects;
     }
 
-    public void addSubjects(Subject subject) {
-        if(subject.level)
-        this.subjects = subjects;
+    public boolean addSubjects(Subject subject) {
+        if(this.level.equals(subject.getLevel())) {
+            return false;
+        }
+        this.subjects.add(subject);
+        return true;
     }
 
     // public boolean isSubject(String subjectName) {

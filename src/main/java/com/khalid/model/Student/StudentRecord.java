@@ -12,7 +12,7 @@ public class StudentRecord {
 
     private final Student   student;
     private SClass          sclass;
-    private GradeLevel      grade;
+    private GradeLevel      level;
     private List<Subject>   subjects;
     private List<Group>     groups;
     private long            registerDate;
@@ -20,14 +20,14 @@ public class StudentRecord {
     /** 
      * @param student
      * @param sclass
-     * @param grade
+     * @param level
      * @param subjects
      * @param groups
      */
-    public StudentRecord(Student student, SClass sclass, GradeLevel grade, List<Subject> subjects, List<Group> groups) {
+    public StudentRecord(Student student, SClass sclass, GradeLevel level, List<Subject> subjects, List<Group> groups) {
         this.student        = student;
         this.sclass         = sclass;
-        this.grade          = grade;
+        this.level          = level;
         this.subjects       = subjects;
         this.groups         = groups;
         this.registerDate   = new Date().getTime();
@@ -57,15 +57,15 @@ public class StudentRecord {
     /** 
      * @return GradeLevel
      */
-    public GradeLevel getGrade() {
-        return this.grade;
+    public GradeLevel getlevel() {
+        return this.level;
     }
 
     /** 
-     * @param grade
+     * @param level
      */
-    public void setGrade(GradeLevel grade) {
-        this.grade = grade;
+    public void setlevel(GradeLevel level) {
+        this.level = level;
     }
 
     /** 
@@ -109,7 +109,7 @@ public class StudentRecord {
             " student='" + getStudent() + "'" +
             ", regdate='" + getRegisterDate() + "'" +
             ", sclass='" + getSclass() + "'" +
-            ", grade='" + getGrade() + "'" +
+            ", level='" + getlevel() + "'" +
             ", subjects='" + getSubjects() + "'" +
             ", groups='" + getGroups() + "'" +
             "}";
